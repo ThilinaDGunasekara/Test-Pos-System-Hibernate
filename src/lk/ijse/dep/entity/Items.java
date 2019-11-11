@@ -4,9 +4,11 @@ package lk.ijse.dep.entity;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+@NamedNativeQuery(name="query3",query = "SELECT * FROM item")
 
+@NamedNativeQuery(name="query4",query = "SELECT * FROM item",resultClass = Items.class)
 @Entity
-@Table(name = "item")
+@Table(name="item")
 public class Items {
     @Id
     private

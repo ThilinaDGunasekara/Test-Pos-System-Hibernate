@@ -4,6 +4,9 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@NamedQuery(name="query1",query = "SELECT c FROM Customer c")
+@NamedQuery(name = "query2", query = "SELECT c FROM Customer c WHERE c.id =?1")
+
 @Entity
 @Table(name = "customer")
 public class Customer {

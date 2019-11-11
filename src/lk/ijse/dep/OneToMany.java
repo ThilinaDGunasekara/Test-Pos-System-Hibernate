@@ -4,9 +4,10 @@ import lk.ijse.dep.entity.*;
 import lk.ijse.dep.entity.util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.cache.spi.support.AbstractReadWriteAccess;
+import org.hibernate.query.Query;
 
 import java.sql.Date;
+import java.util.List;
 
 
 public class OneToMany {
@@ -42,20 +43,20 @@ public class OneToMany {
             Order od001 = new Order("OD001", Date.valueOf("2019-11-07"));
 
             alisa.addOrder(od001);
-            session.persist(alisa);*/
+            session.persist(alisa);
 
-            /*Customer alisa = session.get(Customer.class, "C001");
+            Customer alisa = session.get(Customer.class, "C001");
             Order od001 = session.get(Order.class, "OD001");
 
             alisa.removeOrder(od001);*/
 
 
-            /*Items item1 = new Items("I001", "Pen", 100, 50);
+           /* Items item1 = new Items("I001", "Pen", 100, 50);
             Order oi001 = new Order("OD002", Date.valueOf("2019-11-07"));
             session.persist(item1);
             session.persist(oi001);*/
-
-            /*Order oi001 = session.get(Order.class, "OD001");
+/*
+            Order oi001 = session.get(Order.class, "OD001");
             Items i001 = session.get(Items.class, "I001");
             System.out.println(oi001);
             System.out.println(i001);
@@ -64,7 +65,7 @@ public class OneToMany {
 
             //test3
 
-            /*Order od002 = new Order("OD002", Date.valueOf("2019-11-09"));
+            Order od002 = new Order("OD002", Date.valueOf("2019-11-09"));
             Items sop = new Items("I002", "Sop", 50, 30);
             Items mouse = new Items("I003", "Mouse", 50, 300);
 
@@ -80,7 +81,7 @@ public class OneToMany {
 
             od002.addOrderDetail(orderDetail1);
 
-            session.persist(od002);*/
+            session.persist(od002);
 
             //test 4
 
@@ -109,13 +110,13 @@ public class OneToMany {
 
             /*OrderDetail od0021 = session.get(OrderDetail.class,new OrderDetailPK("OD002","I002"));
             session.remove(od0021);*/
-            Items items = new Items("I001", "Sop", 10, 20);
+            /*Items items = new Items("I001", "Sop", 10, 20);
             Order od001 = new Order("OD001", Date.valueOf("2019-11-10"));
             session.persist(items);
             session.persist(od001);
 
             OrderDetail orderDetail = new OrderDetail(od001.getId(),items.getItemId(), 10, 30);
-            session.persist(orderDetail);
+            session.persist(orderDetail);*/
 
             session.getTransaction().commit();
         }
